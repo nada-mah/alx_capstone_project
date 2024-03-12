@@ -1,0 +1,192 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+/* ---- CSS RESET SECTION ---- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* SUMMARY
+    1. GLOBAL
+    2.
+*/
+
+/*** 1. GLOBAL ***/
+:root{
+    --color-grayblue: #393C49;
+    --color-darkblue: #252836;
+    --color-darkerblue:#1F1D2B;
+    --color-lightbluemain: #73AFEF;
+    --color-darkerlightblue: #6AA0EC;
+    --color-fontblue: #A4D0FF;
+    --font-family-base: 'Source Sans Pro', Arial, sans-serif;
+}
+
+.rubik-regular {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+.rubik-semibold {
+      font-family: "Rubik", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 600;
+      font-style: normal;
+}
+.rubik-italic {
+      font-family: "Rubik", sans-serif;
+      font-optical-sizing: auto;
+      font-style: italic;
+      font-weight: 300;
+}
+body{
+    background: var(--color-grayblue);
+    background: linear-gradient(100deg, var(--color-grayblue) 40%, var(--color-lightbluemain) 100%);
+    /* background-image:url('../assets/Rectangle\ 6.png'); */
+    height: 2780px;
+}
+
+/*** 2. NAVBAR ***/
+nav{
+    padding: 0px 20px 0px 20px;
+    display: flex;
+    justify-content: space-between;
+
+}
+nav a{
+    text-decoration: none;
+    color: var(--color-darkerblue);
+}
+nav a:hover{
+    text-decoration: none;
+    color: var(--color-fontblue);
+    border-bottom: 3px solid var(--color-darkblue);
+}
+nav img{
+    width: 180px;
+    height: 98px;
+
+}
+.navLinks{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+.navLinks img{
+    width: 25px;
+    height: 25px;
+}
+
+/*** 3. Herosection ***/
+
+.Herosections{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3%;
+}
+.mainsection{
+    width: 50%;
+}
+.mainsection h1 {
+    font-size: 76px;
+    color: var(--color-fontblue);
+}
+.mainsection h6 {
+    padding: 2%;
+    font-size: 10px;
+    color: var(--color-fontblue);
+
+}
+.hero {
+    width: 40%;
+    height: 100%;
+     border-radius: 50%;
+    
+}
+.search{
+    display: flex;
+     flex-direction: row;
+}
+.search input{
+    color: #ABBBC2;
+    width: 90%;
+    height: 50px;
+    background-color: #2D303E;
+    border: none;
+    border: 1px solid #393C49;
+    display: block;
+    padding: 9px 4px 9px 40px;
+    background: #2D303E url("../assets/graysearch.png") no-repeat 12px;
+}
+.search input::placeholder{
+    color: #ABBBC2;
+    margin-left: 20px;
+}
+.search input:focus{
+    color: #ABBBC2;
+    border: none;
+}
+
+.search button{
+    height: 50px;
+    background-color: var(--color-darkerlightblue);
+    border: none;
+    color: aliceblue;
+    border-radius: 10%;
+    width: 15%;
+    margin-left: 2%;
+    cursor: pointer;
+    /* box-shadow: 1px 1px 3px var(--color-fontblue); */
+}
+.search button:hover{
+    background-color: aliceblue;
+    color: var(--color-darkerlightblue);
+    
+
+}
+/*** 3. Category ***/
