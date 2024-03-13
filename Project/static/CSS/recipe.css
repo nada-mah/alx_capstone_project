@@ -1,0 +1,52 @@
+:root{
+    --color-grayblue: #393C49;
+    --color-darkblue: #252836;
+    --color-darkerblue:#1F1D2B;
+    --color-lightbluemain: #73AFEF;
+    --color-darkerlightblue: #6AA0EC;
+    --color-fontblue: #A4D0FF;
+
+}
+.block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:auto;
+    gap: 40px;
+    height: 600px;
+
+}
+.temp{
+    width: 50%;
+    height: 200px;
+    background-color: var(--color-darkerblue);
+}
+h1{
+    width: 80%;
+}
+.Summary{
+    background-color: var(--color-darkblue);
+
+}
+
+.Instructions{
+    background-color: #435066;
+}
+
+.Ingredients{
+    background-color: var(--color-darkblue);
+}
+
+h2{
+    padding-top: 2%;
+    color: aliceblue;
+    font-size: 40px;
+}
+p{
+    font-family: 'Courier New', Courier, monospace;
+    color: aliceblue;
+    font-size: 20px;
+    width: 60%;
+    line-height: 25px;
+    font-weight: 300;
+}

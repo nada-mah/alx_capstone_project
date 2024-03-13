@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block css %}
+    {{ super() }}
+    <link href="../static/CSS/recipe.css" rel="stylesheet">
+{% endblock css %}
+{% block title %}
+    <title>Recipes</title>
+{% endblock %} 
+{% block content %}
+    <section class="recipe block">
+        <h1 class="rubik-semibold">{{recipe.name}}</h1>
+        <div class="temp"></div>
+    </section>
+    <section class="Summary block rubik-regular">
+        <h2>Summary</h2>
+        <p>{{recipe.Summary}}</p>
+    </section>
+    <section class="Instructions block rubik-regular">
+        <h2>Instructions</h2>
+        <p>{{recipe.Instructions}}</p>
+    </section>
+    <section class="Ingredients block rubik-regular">
+        <h2>Ingredients</h2>
+        <p>{{recipe.Ingredients}}</p>
+    </section>
+{% endblock content %}
