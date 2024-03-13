@@ -29,7 +29,12 @@ Morbi in sem quis dui placerat ornare. Pellentesque odio nisi euismod in pharetr
                         Integer vitae egestas placerat.
                         Vestibulum commodo felis. ''',
 }
-
+result= {
+    'img':'https://spoonacular.com/recipeImages/716429-312x231.jpg',
+    'name':'Spicy seasoned seafood noodles',
+    'duration':'40 min',
+    'rating':'3.6',
+}
 """Home"""
 @app.route('/')
 def home_template():
@@ -38,7 +43,7 @@ def home_template():
 """display search results"""
 @app.route('/search')
 def search_template():
-    return render_template('search.html')
+    return render_template('search.html',result=result)
 
 """display recipe"""
 @app.route('/recipe')
