@@ -159,7 +159,7 @@ h1 {
     border: 1px solid #393C49;
     display: block;
     padding: 9px 4px 9px 40px;
-    background: #2D303E url("../../assets/graysearch.png") no-repeat 12px;
+    background: #2D303E url("../assets/graysearch.png") no-repeat 12px;
 }
 .search input::placeholder{
     color: #ABBBC2;
