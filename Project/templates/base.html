@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@1,500&display=swap" rel="stylesheet">
+    {% block css %}
+        <link href="../static/CSS/index.css" rel="stylesheet">
+    {% endblock css %}
+    {% block title %}
+        <title>HOME</title>
+    {% endblock %} 
+</head>
+<body>
+    <header>
+        <nav>
+        <img src="../static/assets/logo.png" alt="logo">
+        <div class="navLinks rubik-semibold">
+            <a href="#" target="_blank">Discover</a>
+            <a href="#" target="_blank">History</a>
+            <a href="#" target="_blank">Favorites</a>
+            <a href="#" target="_blank"><img src="../static/assets/search.png" alt="Search icon"></a>
+            <a href="#" target="_blank"><img src="../static/assets/account.png" alt="Account icon"></a>
+        </div>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+    <footer>
+        <img src="../static/assets/logo.png" alt="logo">
+    </footer>
+</body>
+</html>
