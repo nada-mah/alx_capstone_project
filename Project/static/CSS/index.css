@@ -84,7 +84,7 @@ table {
 body{
     background: var(--color-grayblue);
     background: linear-gradient(100deg, var(--color-grayblue) 40%, var(--color-lightbluemain) 100%);
-    height: 2780px;
+    /* height: 2780px; */
 }
 
 /*** 2. NAVBAR ***/
@@ -130,7 +130,7 @@ nav img{
 .mainsection{
     width: 50%;
 }
-.mainsection h1 {
+h1 {
     font-size: 76px;
     color: var(--color-fontblue);
 }
