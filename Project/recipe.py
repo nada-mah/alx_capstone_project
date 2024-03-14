@@ -1,7 +1,16 @@
 """FLASK initialized"""
 from flask import Flask, render_template
+import requests 
 
 app = Flask(__name__)
+
+
+URL = "https://api.edamam.com/api/recipes/v2?q=pasta&type=any&app_id=846c5414&app_key=c4dee5f560b23f6cc8c25800f61ad99f"
+
+res2 = requests.get(URL)
+res = res2.json()
+results = res["hits"]
+
 
 
 recipe = {
@@ -29,12 +38,12 @@ Morbi in sem quis dui placerat ornare. Pellentesque odio nisi euismod in pharetr
                         Integer vitae egestas placerat.
                         Vestibulum commodo felis. ''',
 }
-result= {
-    'img':'https://spoonacular.com/recipeImages/716429-312x231.jpg',
-    'name':'Spicy seasoned seafood noodles',
-    'duration':'40 min',
-    'rating':'3.6',
-}
+# results= {
+#     'img':'https://spoonacular.com/recipeImages/716429-312x231.jpg',
+#     'name':'Spicy seafood noodles',
+#     'duration':'40 min',
+#     'rating':'3.6',
+# }
 """Home"""
 @app.route('/')
 def home_template():
@@ -43,7 +52,7 @@ def home_template():
 """display search results"""
 @app.route('/search')
 def search_template():
-    return render_template('search.html',result=result)
+    return render_template('search.html',results=results)
 
 """display recipe"""
 @app.route('/recipe')
