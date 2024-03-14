@@ -61,10 +61,10 @@ h2{
 .rating{
     display: flex;
     align-items: center;
-    gap: 2px;
+    gap: 5px;
 }
 .rating img{
-    width: 10px;
+    width: 20px;
 }
 
 .view{
