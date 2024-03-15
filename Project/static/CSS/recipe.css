@@ -106,3 +106,27 @@ span{
     line-height: 25px;
     font-weight: 300;
 }
+.nodisplay{
+    display: none;
+}
+.fav{
+    display: flex;
+    justify-content: center;
+}
+
+.fav button{
+    height: 50px;
+    font-size: 20px;
+    background-color: var(--color-darkerlightblue);
+    border: none;
+    color: aliceblue;
+    cursor: pointer;
+    box-shadow: 0 1px 14px #a4d0ff36;
+}
+.fav button:hover{
+    background-color: aliceblue;
+    color: var(--color-darkerlightblue);
+    box-shadow: 0 1px 14px #6aa0ec49;
+    
+
+}

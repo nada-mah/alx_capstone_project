@@ -10,6 +10,10 @@
     <section class="recipe block">
         <h1 class="rubik-semibold">{{recipe['title']}}</h1>
         <img  src={{recipe.image}} alt="recipe photo">
+        <form class="fav" action="{{url_for('fav_template')}}" method="post">
+            <input class="nodisplay" id="id" name="id" required type="text" value={{recipe.id}}>
+            <button  type="submit" class="view rubik-regular">Add to Favourites</button>
+        </form>
     </section>
     <section class="Summary block rubik-regular">
         <h2>Summary</h2>
