@@ -8,19 +8,23 @@
 {% endblock %} 
 {% block content %}
     <section class="recipe block">
-        <h1 class="rubik-semibold">{{recipe.name}}</h1>
-        <div class="temp"></div>
+        <h1 class="rubik-semibold">{{recipe['title']}}</h1>
+        <img class="recipe-photo" src={{recipe.image}} alt="recipe photo">
     </section>
     <section class="Summary block rubik-regular">
         <h2>Summary</h2>
-        <p>{{recipe.Summary}}</p>
+        <p>{{recipe['summary']| safe}}</p>
     </section>
     <section class="Instructions block rubik-regular">
         <h2>Instructions</h2>
-        <p>{{recipe.Instructions}}</p>
+        <span>{{recipe['instructions']| safe}}</span>
     </section>
     <section class="Ingredients block rubik-regular">
         <h2>Ingredients</h2>
-        <p>{{recipe.Ingredients}}</p>
+        <div>
+            {%  for ingredient in recipe['extendedIngredients'] %}
+                <li>{{ingredient['amount']}} {{ingredient['unit']}} {{ingredient['nameClean'] }}</li>
+            {% endfor %}
+        </div>
     </section>
 {% endblock content %}

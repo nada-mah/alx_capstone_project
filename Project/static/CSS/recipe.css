@@ -13,7 +13,9 @@
     align-items: center;
     width:auto;
     gap: 40px;
-    height: 600px;
+    padding: 5%;
+    height: auto;
+    min-height: 600px;
 
 }
 .temp{
@@ -28,13 +30,51 @@ h1{
     background-color: var(--color-darkblue);
 
 }
+.Summary a{
+    text-decoration: none;
+    color: var(--color-darkerlightblue);
+}
 
 .Instructions{
     background-color: #435066;
+    
 }
+/*  */
+.Instructions span{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+  .Instructions ol {
+    list-style-type: decimal;
+    font-size: 16px;
+  }
 
+  .Instructions li {
+    color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+  /*  */
 .Ingredients{
     background-color: var(--color-darkblue);
+    gap: 15px;
+    
+}
+.Ingredients div{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: flex-end;
+}
+.Ingredients li{
+    font-family: 'Courier New', Courier, monospace;
+    color: aliceblue;
+    font-size: 20px;
+    width: 60%;
+    line-height: 25px;
+    font-weight: 300;
 }
 
 h2{
