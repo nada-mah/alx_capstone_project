@@ -9,10 +9,11 @@
 {% block content %}
     <section class="recipe block">
         <h1 class="rubik-semibold">{{recipe['title']}}</h1>
-        <img class="recipe-photo" src={{recipe.image}} alt="recipe photo">
+        <img  src={{recipe.image}} alt="recipe photo">
     </section>
     <section class="Summary block rubik-regular">
         <h2>Summary</h2>
+        <p class="details rubik-semibold ">Cook time: {{recipe['readyInMinutes']}} min &emsp; Servings: {{recipe['servings']}}</p>
         <p>{{recipe['summary']| safe}}</p>
     </section>
     <section class="Instructions block rubik-regular">
