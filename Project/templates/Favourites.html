@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block css %}
+    {{ super() }}
+    <link href="../static/CSS/search.css" rel="stylesheet">
+{% endblock css %}
+{% block content %}
+    <div class="results">
+        {% for favc in fav %}
+            <div class="card">
+                <div class="details">
+                    <img class="recipe-photo" src={{favc.image}} alt="recipe photo">
+                    <p class="name">{{favc['title']}}</p>
+                </div>
+                <form action="{{url_for('recipe_template')}}" method="post">
+                    <input class="nodisplay" id="id" name="id" required type="text" value={{favc.id}}>
+                    <button  type="submit" class="view rubik-regular">VIEW RECIPE</button>
+                </form>
+            </div>
+    {% endfor %}
+{% endblock content %}
