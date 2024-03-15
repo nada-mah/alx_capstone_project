@@ -1,7 +1,7 @@
 """FLASK initialized"""
 from flask import Flask, request, render_template,redirect,url_for
 import requests 
-from recipe import edamamAPI , spoonacularAPI, moreinfoAPI
+from recipe import edamamAPI , spoonacularAPI, moreinfoAPI, addFavourites, getFavourites
 
 app = Flask(__name__)
 
@@ -30,6 +30,16 @@ def recipe_template():
         return render_template('recipe.html', recipe=results)
     return render_template("index.html")
 
+"""add fav"""
+@app.route('/favourites' , methods = ["GET","POST"])
+def fav_template():
+    if request.method == 'POST':
+        id = request.form.get('id')
+        addFavourites(id)
+        
+    fav = getFavourites()
+    return render_template('Favourites.html', fav=fav )
+        
 
 
 if __name__ == '__main__':

@@ -1,5 +1,17 @@
 import requests 
 
+favourites = []
+
+def addFavourites(id):
+    if id not in favourites:
+        favourites.append(id)
+    
+
+def getFavourites():
+    favouritescard = []
+    for fav in favourites:
+        favouritescard.append(moreinfoAPI(fav))
+    return favouritescard
 
 
 def edamamAPI(data):    
@@ -11,9 +23,9 @@ def edamamAPI(data):
     return results
 
 def spoonacularAPI(data):
-    URL = f"https://api.spoonacular.com/recipes/complexSearch?query={data}"
+    URL = f"https://api.spoonacular.com/recipes/complexSearch?query={data}&number=20"
 
-    headers = {"Content-Type": 'application/json', "x-api-key": '7e5fee6cfa1a46deb8ee9421541cbd2d'}
+    headers = {"Content-Type": 'application/json', "x-api-key": '362e243efc90427aa66306c8c266ee01'}
     
 
     res2 = requests.get(URL , headers=headers)
