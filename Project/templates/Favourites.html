@@ -3,6 +3,9 @@
     {{ super() }}
     <link href="../static/CSS/search.css" rel="stylesheet">
 {% endblock css %}
+{% block title %}
+    <title>Favourites</title>
+{% endblock %} 
 {% block content %}
     <div class="results">
         {% for favc in fav %}
