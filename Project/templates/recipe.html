@@ -32,4 +32,58 @@
             {% endfor %}
         </div>
     </section>
+    <section class="Review block rubik-regular">
+        <h2>Review this recipe:</h2>
+        <form id="review" class="reviewform" action="{{url_for('review_template')}}" method="post">
+            <input class="nodisplay" id="id" name="id" required type="text" value={{recipe.id}}>
+            <input class="nodisplay" id="title" name="title" required type="text" value={{recipe.title}}>
+            <input class="nodisplay" id="img" name="img" required type="text" value={{recipe.image}}>
+            <label for="email">Email:</label>
+            <input  type="email" id="email" name="email" required placeholder="Email">
+            <label for="username">Username:</label>
+            <input  type="text" id="username" name="username" required placeholder="Username">
+            <div>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFcElEQVR4nO2ZW0xTdxyAj0sWZToZXhAYEwWlLQhMuUzUgToUFJm3FRi3MjeX+GDcg+9zW7a3Jc5se3TJ4pYlPixZli1YoYX2nNLSSpECpT2tG0+bCwnn1nOF33JOS4HITT2HlYXvqUlD+/1+/eD8T0GQNdZYQzMmQu+XTYTaS5HVCIW3pBKhdoYMmRj5MbLaIEKmG2TIBGSoDYhg8w1kNQGBq+sJvO0vMtQKJN4CBN78GMaMSchqgQy3Xo7KNwMZbAIq+C6Q/voPkNUAALKOwFuGZuQbgQo0ADVa75efQxIdAm86JcvLW6cCsnw9UKNGoEbfAdp/vgZJdIhgkzkq3zAj778ItP8CUCPnO5BEhsJb9pGBxqlYMsrWp+XpkXNAj5wFerC2CElUqEDjd7OToRTx81H54beBHq4Daqj2NpKIUHhLKjlqZGcnE5U/G5enh2qBHjzN0cPV6UiiQfmNn80kE9u6Ii+Ln1HkGd8pYHw1wAye/BRJJGDMmESNXvxnvmRkeWbodFR+UJEHZqBqHLwnNv43soCsox8Z0xjcWEwE6utIv/EK6b9wZ6FkGJ8sL4tXR+UfVkFk4C1gvMfuMN7KK4y3oo7xHCmmnZVpqlwnJv78MIcMX6qYCJmaiXDbdTLUepPAW+6SeBNKBJrGyGCD8ORfmaWSqQbm4Ym4fGTgGES8RyHirYBI/5vAPjgC7INDEPGUC6zn4BjrLkNZd+ldtq/4Juc6cJ13FjVHnPsrWFdB9qLyxKNLnxDh94AMt0P0IBY9yyx0YVp2Moq8LH48Jl8Jkf5p+cOKPOspB9b9BrDuMuD6SoHrKwbOdQA41+vAOYuA6y0EvncfcFjexwsPEG43ESHTlHyCJPG5Z5n5LkxzkzmzaDKKvLL1aXl564eB9cjyB2PysnhJTH4/cM6oPN9bEJPPn+Ixfdvin0K4tZXAm4V5zjKqJ8PKW1fky2bkla1Py8tbLwDekQ+cI0/i7frLy/o9oEJNVVSwkUyEZHhZHjMwHKqvRZ4Gxl9fSo3WP1Y/mfJlJ8PL8qh+XMByDyPPwkSgIYfyXwjGkxmeSYZ53mT6Fk+Gd+QBj+n/4NBcPfI80D5jGjVyrn/+ZKo1SYZ35AGH6XxM755MRA3+9hk30UO191YiGR4zAIfqrODOTkbUBAI162lfzU/aJmMAHtP9DFhmknbHiMGTXz59MiVLJsNjeuDtuq8BkBcQrYkMHL+lZjK8LI/m3kJWCmbg6BcqJgM8mgs8uufzlRugv7JTlWRQHQhoLgj2PcDbc+6viLzcKNNfQaiQDAjoXkVesGcD37OLXJH+uQdH8paXTNGCyQhx+RwQbNkg2HaD0JMFnDXLoPkAbP+hdjWSicrvBsG2S5EXu18DqTvDpPkAEU/5t08k43r6ZKJb3wViz05FXuzOBNGS/o3mA7Ceg261khEV+UwQra+CaM0AsWtHn6byYKncEOkr45eTDIfqxlm77qpg33uVt+WMz5eMGJdPB9GSBqIllQdL1gbNBoi4Sg4tnowsbpjkMN33FJod/6cG2Ham8LbdX/E9WeKcZKwZcjaKvNSVClLXdhDMKeWaDcC5Sj5aIpku3pFbuODPW7L0Qnfmb/FkLGkgWXbE5LeB1LkVpPtbrmk2AOs88OO8yWCGsSXvVWchWjPqREsaHpXfDlLntHwKTN5P/kGzAbjeInzuTbaB5lHDjWfpFtzIi1LXtmti51ZC6twSlTcng2R+OaiJPNgKUtjewilZnsPyJznMcJvu1j/3d5zw+7Z00fzKbcmcPDlp3gxSx6Yp+DU5RR3r2W/kLdzIO/L9nCPPKjj3laj++vc2l0gdG61SR9II/IK8pPbrr7HG/5V/AT5EQ+H6G6VTAAAAAElFTkSuQmCC">
+            <input id="stars" name="stars" type="range" min="1" max="5" step="1" />
+            </div>
+            <label for="review">Write your review:</label>
+            <textarea id="review" name="review" cols="50" rows="10" required type="text"></textarea>
+            <div class="fav">
+                <button id="Review-button" class="view rubik-regular" type="submit" class="view rubik-regular">Review</button>
+            </div>
+        </form>
+    </section>
+    {% if Reviews %}
+        <section class="display block rubik-regular">
+            <h2>Reviews:</h2>
+            {% for Review in Reviews %} 
+                {% if Review['id'] == recipe['id']  %}
+                <div class="list">
+                    <p class="rubik-semibold">{{Review['name']}}</p>
+                    <div class="stars">
+                        {% for star in Review['stars']  %}
+                        {% if star==True %}
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAADiUlEQVR4nO2aT4hXVRTHz5hmm8x/zTvnN5MSiKFWCxMRAt0IBW6SUIhMhLSFCtZGiRZBIUSLwoWCEFSCG5EiEgX/MMw75/ebUQZcaKGBLgo1cFGiWb93TnPjzk+Hnzgzv/f03fd7D/rC2d57P/ece+69516A/9VZbmDhUyY0ZExnnIMeqKosprdMyHlL6rgaqioTPHkfRJm+hirKDff1q5CNgwjdccNzZ0HVZIIf34dos61QJTkHPSp05SEQxgZUScq1tRN4Y8xcjEuhKlLBw5OBKNPnUAW5kTnPKONfU4D87kZgBpRdxtGOySDGYWJ6A8ouExrpBGKMP0CZ1Wz0vtQRorWnqBucT1BWKeO+NCD3bDeUUe7i0idV8GZaEBW8XMqDpHG0MYM3WgfJmF6FssmETmQFUcGvCh2kG1g42x8C3RAuSRrRSr9zq+CbJtEWY9ppgh+1HxDTg9BtY9pjMW43xs3KtN63nQiucFJ7wTX6+1IfNE1omwodMsHvTPCUT5/KeEkZrynTrayDC2XK9Kcy/qZMPxvTubGxMh1VoW+McQP443W3B/nYkEJXQGN83dN2ezCP5ak6vdZaA43+RSr0U/U8gb/4dfvggpZ5T5vg990enKW34z4JTZydHPT4LKJM/5Y4lEZV8DPnYFrnTMa4oYxJQAX/NsFNkEXNuO9lFbpaIohfE6ZXMkGMh9rZ2jxjPN1tCGOMXT3qfSSIcZgBmO5jsnueoIO53ihN6G1lvFtgKP1jTO9CCDUHabmP1QK8cD3h3lUQUk6eq7XOOqHWA53zfUARUsEvg3mD6QsoSiZ0MaBHLhQC4QaeRb+7BvTIaCGFCX8BCr3YLcZ3goO0LmFhQVTo2yKq7NcLALkRtMLSrEcvBg8raVmTo2XBQIzp/aJAjGlXSJBjmUKEKVHGvS2jJCPIsYCVRLqdfiB4vv3YPVYXZjqbYZ3ccccXzcwdJIlxTTov4F1/y3RH4ImHJsPBNGN6L+2EJCGetFXo0xThMOji2uJObbnB6Pn2p+spvPJJ7iAmNDx5h/iHn+msKbN1pZ6y8D2UK4SvVkxREv3RlzYfue2h3miyTVaFzPGCObmB+JrsBJ3c8PXf3PqoR+smuuvk+kynTAfaUuqon0HX6J8LYR5S97WXo1Rof24dmKDcWwuXi/gck9Rxte8r908GvmFj+tB/W4JCv0jhBz7tF9VnKfQfFFqnRXm5TeMAAAAASUVORK5CYII=">
+                        {% else %}
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAD5klEQVR4nO2ZaahNaxjHf8c5uAfXlEPGpMzDByGzW265fCDXUPcDMuSTWfKB4pshlCljXVxdRd2MR9dMXeEDkumQFNec46Acw3G2Hv1Xve32OXvtY6119opfrdq969nP87zvWut9hhd+4IsawFngjH7Hll+BhK6hxJg9zkT+JqY0BkqBMl2lGosds/QkCoGj+j2TGHJFzo8Bxur3NWJGbzn+AqgN1AKeaawXMWKznF7ljK3W2CZiQj7wSk53ccY7aawEqEMMmCSH/0tx77zuTSQGnJOzU1Lcm6p7Fu2zmg5AOfAW+DnF/XrAG03GXrWsZbmc3FaJzHbJLCNLyQMey8m+lcj1k8xToCZZyCg5eMuH7A3JjiQLOSjn5vmQnS/ZA1RDbCgA2gE9gcHAcGAcMB1YAHwCPkguHQWS/aT/Tpeu4dLdU7YKZNsXE4A/gX3AceACcB24DxQrc034vPZmsDh7M9BbJl/uy7cL8nWffLc58NyHolLlTfeAy4oVhXJmK7AGWAI0z2AiLfSfNdJhugql+7JsvZDtdP7ZHPhNaUNCe/x4oBvQFmgE5FL95MqXtvJtvBOPSjSHr7QHbjoZ6y9kL/2BJ/L1blI+95X6zs5jH+EMso9p2iTMx3/1lCp8hF50tmtLlgStvBR+2Vha/gDe6U/28TWl+mgMnJAv74HJmSqwvfyBFNzTRxY1HYHb8uFxmtQn7RZ5UYosox1NdIxwdlPbjtt8q0KruXdIYbne1TC7hjnAQuCzbO4JuqKc7UR5C151CZ6fgL+cRVuqiYX6uK3d0zpA3abLayGVyFaoWGVXJIOW5wSF9/oWRVk9rpdRy5WCwl4j07mOCPHSmQEB6hwonVZ0RUILJ8EMMupbpH4t3a2IsG91KATdh6Pse+2SsTkh6J4r3TuJgIcyFkbK0l26HxEynWXoic9A1UlnI0d9bqk5Tq1htkJjpoxY9E334S5MKlM/Kr2xI4bK2C35UOuh/TJSWSrdRwc6XpqxXVe5c9hjMhUxWXJmKxRyneOCVKlJvla8zEn97VTXY5CadwklhFvUC06mlZOm+CqeMsVrdVp9kMwQ4I5TJq+tIKnMVwT3ylVr7wxLIVfko/VaZRZL+QZnrKFW1nttrurYLR09gEtJ/bAmzv2NGl8Uwjw4LeVecTXOORd8p5XOJNLnqTR4Kx0v1XE0ftfYqaAnUUf1sr3/XYF/nNU8p5K0qlhr9Jij74ieWJlewUDrnmHOynuNsWKdSgVR+ORIV7GTx3nNj1TfUJVZmdSitDyrJcHTzEmBvGtFkAZOSun/OgcJm1GylZDtwBiiXasB0dFANs3298MXw0hXuTS4jKMAAAAASUVORK5CYII=">
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <p class="rubik-regular">{{Review['comment']}}</p>
+                </div>  
+                {%  endif %}
+            {% endfor %}
+        </section>
+    {% endif %}
 {% endblock content %}
+{% block javascript %}
+	<script>
+	form = document.getElementById('review');
+    form.addEventListener('submit',alertreview);
+
+    function alertreview(){
+        alert('Review Sent');
+    };
+    </script>
+
+{% endblock %}
