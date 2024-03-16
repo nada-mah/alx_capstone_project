@@ -91,3 +91,15 @@ h2{
     background-color: #73AFEF;
 }
 
+@media screen and (max-width: 770px) {
+    .card{
+        width: 140px;
+
+    }
+    .name{
+        font-size: 13px;
+    }
+    .recipe-photo{
+        width: 90px;
+    }
+}
