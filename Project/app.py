@@ -1,9 +1,13 @@
 """FLASK initialized"""
 from flask import Flask, request, render_template,redirect,url_for
+from flask_sqlalchemy import SQLAlchemy
 import requests 
-from recipe import edamamAPI , spoonacularAPI, moreinfoAPI, addFavourites, getFavourites
+from recipe import *
+
 
 app = Flask(__name__)
+
+Reviews =getratings()
 
 
 """Home"""
@@ -19,7 +23,6 @@ def search_template():
         results = spoonacularAPI(query)
         return render_template('search.html',results=results)
     return render_template('index.html')
-recipe = 'out'
 
 """display recipe"""
 @app.route('/recipe' , methods = ["GET","POST"])
@@ -27,8 +30,22 @@ def recipe_template():
     if request.method == 'POST':
         id = request.form.get('id')
         results = moreinfoAPI(id)
-        return render_template('recipe.html', recipe=results)
+        return render_template('recipe.html', Reviews=Reviews,recipe=results)
     return render_template("index.html")
+
+@app.route('/recipe/review' , methods = ["GET","POST"])
+def review_template():
+    if request.method == 'POST':
+        id = request.form.get('id')
+        stars = request.form.get('stars')
+        review = request.form.get('review')
+        title = request.form.get('title')
+        img = request.form.get('img')
+        email = request.form.get('email')
+        Reviews = addrating(id,stars,review,title,img,email)
+        return render_template('recipe.html',recipe=moreinfoAPI(id),Reviews=Reviews)
+    return render_template("index.html")
+
 
 """add fav"""
 @app.route('/favourites' , methods = ["GET","POST"])
