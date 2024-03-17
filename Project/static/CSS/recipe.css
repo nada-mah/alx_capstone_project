@@ -173,6 +173,19 @@ label{
     .Ingredients div{
         align-items: start;
     }
+    .Ingredients li{
+        font-size: 15px;
+        line-height: 15px;
+        width: auto;
+    }
+    p{
     
+        font-size: 15px;
+
+    }
+    span{
+        font-size:15px;
+        line-height: 19px
+    }
 }
 
