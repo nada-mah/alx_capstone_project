@@ -15,10 +15,9 @@ app = Flask(__name__)
 ############################# SETUP ############################
 app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://{}:{}@{}/{}".format(db_username, db_password,db_host ,db_name )
 ###############################################################
-
 db = SQLAlchemy(app)
 
-
+'''  Create review class to save users reviews  '''
 class Reviews(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     recipe_id = db.Column(db.Integer)
@@ -63,7 +62,7 @@ def recipe_template():
             riv = {}
         return render_template('recipe.html', stars=starsdisp,Reviews=riv,recipe=results)
     return render_template("index.html")
-
+"""save and display review"""
 @app.route('/review' , methods = ["POST"])
 def review_template():
     if request.method == 'POST':
@@ -85,13 +84,12 @@ def review_template():
     return render_template("index.html")
 
 
-"""add fav"""
+"""add and display favourites"""
 @app.route('/favourites' , methods = ["GET","POST"])
 def fav_template():
     if request.method == 'POST':
         id = request.form.get('id')
         addFavourites(id)
-        
     fav = getFavourites()
     return render_template('Favourites.html', fav=fav )
         

@@ -3,15 +3,18 @@ import requests
 favourites = []
 ratings = []
 
+""" add id to favourites list"""
 def addFavourites(id):
     if id not in favourites:
         favourites.append(id)
-    
+        
+""" get favouried recipe by id"""
 def getFavourites():
     favouritescard = []
     for fav in favourites:
         favouritescard.append(moreinfoAPI(fav))
     return favouritescard
+
 """
 def addrating(id,stars,review,title,img,email):
     stars = int(stars)
@@ -45,12 +48,15 @@ def addrating(id,stars,review,title,img,email):
         ratings.append(reviews)
     return ratings
 """
+
+""" create a list to help display star rating """
 def starsdisp(star):
     starsl = [False,False,False,False,False]
     for i in range(star):
          starsl[i]=True
     return starsl
 
+""" calls spooncular API to search for recipe """
 def spoonacularAPI(data):
     URL = f"https://api.spoonacular.com/recipes/complexSearch?query={data}&number=20"
 
@@ -65,6 +71,7 @@ def spoonacularAPI(data):
         res={}
     return res
 
+""" calls spooncular API to get recipe info by ID """
 def moreinfoAPI(id):
 
     URL = f"https://api.spoonacular.com/recipes/{id}/information"

@@ -47,7 +47,7 @@ h1{
     background-color: #435066;
     
 }
-/*  */
+/* Instructions  */
 .Instructions span{
     display: flex;
     flex-direction: column;
@@ -64,7 +64,7 @@ h1{
     margin-bottom: 10px;
     list-style-type: none;
 }
-  /*  */
+  /* Ingredients */
 .Ingredients{
     background-color: var(--color-darkblue);
     gap: 15px;
