@@ -12,7 +12,7 @@ def getFavourites():
     for fav in favourites:
         favouritescard.append(moreinfoAPI(fav))
     return favouritescard
-
+"""
 def addrating(id,stars,review,title,img,email):
     stars = int(stars)
     id= int(id)
@@ -44,9 +44,12 @@ def addrating(id,stars,review,title,img,email):
                 }
         ratings.append(reviews)
     return ratings
-
-def getratings():
-    return ratings
+"""
+def starsdisp(star):
+    starsl = [False,False,False,False,False]
+    for i in range(star):
+         starsl[i]=True
+    return starsl
 
 def spoonacularAPI(data):
     URL = f"https://api.spoonacular.com/recipes/complexSearch?query={data}&number=20"
