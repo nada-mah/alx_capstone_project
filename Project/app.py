@@ -3,12 +3,13 @@ from flask import Flask, request, render_template,redirect,url_for
 from flask_sqlalchemy import SQLAlchemy
 import requests 
 from recipe import *
+from settings import *
 
 
-db_username = 'root'
-db_password = ";pts2f(M"
-db_name = 'recipe'
-db_host = 'localhost'
+db_username = DB_USERNAME
+db_password = DB_PASSWORD
+db_name = DB_NAME
+db_host = DB_HOST
 
 app = Flask(__name__)
 
